@@ -2,7 +2,8 @@
 ============================================
 
 ## Loading and preprocessing the data
-```{r echo=TRUE}
+
+```r
 #Load the data (i.e. read.csv())
 dataset <- read.csv("activity.csv", colClasses = "character")
 
@@ -27,13 +28,18 @@ par(mfrow=c(1,1))
 
 
 ## What is mean total number of steps taken per day?
-```{r echo=TRUE}
+
+```r
 #Make a histogram of the total number of steps taken each day
 #consider the dataset after removing all the NAs: dataset_noNAs
 total_steps_per_day <- sapply(split(dataset_noNAs$steps, dataset_noNAs$date), sum)
 
 hist(total_steps_per_day, col="Red")
+```
 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
+
+```r
 #Calculate and report the mean and median total number of steps
 #taken per day
 #consider the dataset after removing all the NAs: dataset_noNAs
@@ -44,7 +50,8 @@ median_steps <- sapply(split(dataset_noNAs$steps, dataset_noNAs$date), median)
 
 
 ## What is the average daily activity pattern?
-```{r echo=TRUE}
+
+```r
 #Make a time series plot (i.e. type = "l") of the 5-minute interval
 #(x-axis) and the average number of steps taken, averaged across
 #all days (y-axis)
@@ -57,7 +64,11 @@ intervals_list <- split(dataset_noNAs$interval, dataset_noNAs$interval)
 #across all days
 intervals <- names(intervals_list)
 plot(intervals, average_steps_per_interval, type="l", xlab="Intervals", ylab="Average steps", col="Blue")
+```
 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+
+```r
 #Which 5-minute interval, on average across all the days in the
 #dataset, contains the maximum number of steps?
 maximum_steps <- max(average_steps_per_interval)
@@ -67,11 +78,18 @@ maximum_steps_interval <- names(intervals)[index_of_maximum_steps]
 
 
 ## Imputing missing values
-```{r echo=TRUE}
+
+```r
 #Calculate and report the total number of missing values in the
 #dataset (i.e. the total number of rows with NAs)
 row_with_NAs <- sum(is.na(data))
+```
 
+```
+## Warning: is.na() applied to non-(list or vector) of type 'closure'
+```
+
+```r
 #Devise a strategy for filling in all of the missing values in the
 #dataset. The strategy does not need to be sophisticated. For
 #example, you could use the mean/median for that day, or the mean
@@ -115,14 +133,19 @@ for (i in seq(intervals)) {
 total_steps_per_day_NAsfilled <- sapply(split(dataset_NAsfilled$steps, dataset_NAsfilled$date), sum)
 
 hist(total_steps_per_day_NAsfilled, col="Green")
+```
 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
+
+```r
 average_steps_per_day_NAsfilled <- sapply(split(dataset_NAsfilled$steps, dataset_NAsfilled$date), mean)
 median_steps_NAsfilled <- sapply(split(dataset_NAsfilled$steps, dataset_NAsfilled$date), median)
 ```
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
-```{r echo=TRUE}
+
+```r
 #Create a new factor variable in the dataset with two
 #levels – “weekday” and “weekend” indicating whether a given
 #date is a weekday or weekend day.
@@ -164,3 +187,5 @@ par(mfrow=c(2,1))
 plot(interval2, average_steps_weekend, type="l", xlab="Intervals", ylab="Number of average steps", col="Blue", main="weekend")
 plot(interval1, average_steps_weekday, type="l", xlab="Intervals", ylab="Number of average steps", col="Blue", main="weekday")
 ```
+
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 

@@ -1,8 +1,4 @@
-# Reproducible Research: Peer Assessment 1
-============================================
-
-## Loading and preprocessing the data
-```{r echo=TRUE}
+##Loading and preprocessing the data
 #Load the data (i.e. read.csv())
 dataset <- read.csv("activity.csv", colClasses = "character")
 
@@ -23,11 +19,8 @@ dataset_noNAs <- dataset[complete.cases(dataset),]
 #set up the margins and graphing parameters
 par(mar=c(3,4,1,1))
 par(mfrow=c(1,1))
-```
 
-
-## What is mean total number of steps taken per day?
-```{r echo=TRUE}
+##What is mean total number of steps taken per day?
 #Make a histogram of the total number of steps taken each day
 #consider the dataset after removing all the NAs: dataset_noNAs
 total_steps_per_day <- sapply(split(dataset_noNAs$steps, dataset_noNAs$date), sum)
@@ -40,11 +33,8 @@ hist(total_steps_per_day, col="Red")
 #calculate the average steps taken over every time interval
 average_steps_per_day <- sapply(split(dataset_noNAs$steps, dataset_noNAs$date), mean)
 median_steps <- sapply(split(dataset_noNAs$steps, dataset_noNAs$date), median)
-```
 
-
-## What is the average daily activity pattern?
-```{r echo=TRUE}
+##What is the average daily activity pattern?
 #Make a time series plot (i.e. type = "l") of the 5-minute interval
 #(x-axis) and the average number of steps taken, averaged across
 #all days (y-axis)
@@ -63,11 +53,8 @@ plot(intervals, average_steps_per_interval, type="l", xlab="Intervals", ylab="Av
 maximum_steps <- max(average_steps_per_interval)
 index_of_maximum_steps <- match(maximum_steps, average_steps_per_interval)
 maximum_steps_interval <- names(intervals)[index_of_maximum_steps]
-```
 
-
-## Imputing missing values
-```{r echo=TRUE}
+##Imputing missing values
 #Calculate and report the total number of missing values in the
 #dataset (i.e. the total number of rows with NAs)
 row_with_NAs <- sum(is.na(data))
@@ -118,11 +105,9 @@ hist(total_steps_per_day_NAsfilled, col="Green")
 
 average_steps_per_day_NAsfilled <- sapply(split(dataset_NAsfilled$steps, dataset_NAsfilled$date), mean)
 median_steps_NAsfilled <- sapply(split(dataset_NAsfilled$steps, dataset_NAsfilled$date), median)
-```
 
-
-## Are there differences in activity patterns between weekdays and weekends?
-```{r echo=TRUE}
+##Are there differences in activity patterns between weekdays
+#and weekends?
 #Create a new factor variable in the dataset with two
 #levels – “weekday” and “weekend” indicating whether a given
 #date is a weekday or weekend day.
@@ -163,4 +148,3 @@ par(mar=c(4,4,2,1))
 par(mfrow=c(2,1))
 plot(interval2, average_steps_weekend, type="l", xlab="Intervals", ylab="Number of average steps", col="Blue", main="weekend")
 plot(interval1, average_steps_weekday, type="l", xlab="Intervals", ylab="Number of average steps", col="Blue", main="weekday")
-```
