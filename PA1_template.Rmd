@@ -39,7 +39,9 @@ hist(total_steps_per_day, col="Red")
 #consider the dataset after removing all the NAs: dataset_noNAs
 #calculate the average steps taken over every time interval
 average_steps_per_day <- sapply(split(dataset_noNAs$steps, dataset_noNAs$date), mean)
-median_steps <- sapply(split(dataset_noNAs$steps, dataset_noNAs$date), median)
+average_steps_per_day
+median_steps_per_day <- sapply(split(dataset_noNAs$steps, dataset_noNAs$date), median)
+median_steps_per_day
 ```
 
 
@@ -62,7 +64,8 @@ plot(intervals, average_steps_per_interval, type="l", xlab="Intervals", ylab="Av
 #dataset, contains the maximum number of steps?
 maximum_steps <- max(average_steps_per_interval)
 index_of_maximum_steps <- match(maximum_steps, average_steps_per_interval)
-maximum_steps_interval <- names(intervals)[index_of_maximum_steps]
+maximum_steps_5_minute_interval <- intervals[index_of_maximum_steps]
+maximum_steps_5_minute_interval
 ```
 
 
@@ -70,14 +73,15 @@ maximum_steps_interval <- names(intervals)[index_of_maximum_steps]
 ```{r echo=TRUE}
 #Calculate and report the total number of missing values in the
 #dataset (i.e. the total number of rows with NAs)
-row_with_NAs <- sum(is.na(data))
+total_number_of_missing_values <- sum(is.na(dataset))
+total_number_of_missing_values
 
 #Devise a strategy for filling in all of the missing values in the
 #dataset. The strategy does not need to be sophisticated. For
 #example, you could use the mean/median for that day, or the mean
 #for that 5-minute interval, etc.
-#My strategy: replace all the NAs with the mean for that 5-minute
-#interval
+#My strategy: replace all the NAs with the mean for the corresponding
+#5-minute interval in that row
 
 #Create a new dataset that is equal to the original dataset but
 #with the missing data filled in.
@@ -109,15 +113,26 @@ for (i in seq(intervals)) {
 
 #Make a histogram of the total number of steps taken each day and
 #Calculate and report the mean and median total number of steps 
-#taken per day. Do these values differ from the estimates from the
-#first part of the assignment? What is the impact of imputing 
-#missing data on the estimates of the total daily number of steps?
+#taken per day.
 total_steps_per_day_NAsfilled <- sapply(split(dataset_NAsfilled$steps, dataset_NAsfilled$date), sum)
 
 hist(total_steps_per_day_NAsfilled, col="Green")
 
 average_steps_per_day_NAsfilled <- sapply(split(dataset_NAsfilled$steps, dataset_NAsfilled$date), mean)
+average_steps_per_day_NAsfilled
 median_steps_NAsfilled <- sapply(split(dataset_NAsfilled$steps, dataset_NAsfilled$date), median)
+median_steps_NAsfilled
+
+#Do these values differ from the estimates from the first part of
+#the assignment? What is the impact of imputing missing data on 
+#the estimates of the total daily number of steps?
+#Yes, the values differ from the estimates from the first part of
+#the assignment. The frequency of steps has gone up in every 5-minute
+#interval category as seen in the green histogram. Moreover,
+#the replacement of NA values with the corresponding row's 5-
+#minute interval mean has given us higher mean and median values.
+#Please note that a lot of the median values for both parts of the
+#assignment are 0 since 0 appears a lot in the given data itself.
 ```
 
 
