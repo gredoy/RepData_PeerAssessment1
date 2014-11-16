@@ -1,0 +1,45 @@
+[11/14/2014 11:26:47 PM] ZIP Reader Version 14.00.0010 Build 1029
+[11/14/2014 11:26:47 PM] Loading C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master.zip
+	0 errors/warnings
+[11/14/2014 11:26:47 PM] Finished.
+[11/14/2014 11:26:47 PM] Extracting C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master.zip
+	Unstoring C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master
+		CRC32 verified
+	Unstoring C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\doc
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\doc\instructions.pdf
+		CRC32 verified
+	Unstoring C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\figure
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\figure\unnamed-chunk-15.png
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\figure\unnamed-chunk-21.png
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\figure\unnamed-chunk-5.png
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\figure\unnamed-chunk-9.png
+		CRC32 verified
+	Unstoring C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\instructions_fig
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\instructions_fig\sample_panelplot.png
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\activity.csv
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\activity.html
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\activity.zip
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\PA1_template.html
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\PA1_template.md
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\PA1_template.Rmd
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\project1.R
+		CRC32 verified
+	Inflating C:\Users\gredy\Documents\GitHub\RepData_PeerAssessment1\RepData_PeerAssessment1-master\RepData_PeerAssessment1-master\README.md
+		CRC32 verified
+	Extracted 18 file(s)/folder(s)
+	Skipped 0 file(s)/folder(s)
+	0 errors/warnings
+[11/14/2014 11:26:47 PM] Finished.
